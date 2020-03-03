@@ -4,6 +4,7 @@
         <name>Senai.InLock.WebApi</name>
     </assembly>
     <members>
+<<<<<<< HEAD
         <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Get">
             <summary>
             Lista todos os estudios
@@ -12,10 +13,20 @@
             Retorna uma lista de estudios e um status code 200 - Ok
             </returns>
             <response code="200">Se a lista for acessada com sucesso</response>
+=======
+        <member name="M:Senai.InLock.WebApi.Controllers.LoginController.Post(Senai.InLock.WebApi.ViewModels.LoginViewModel)">
+            <summary>
+            Valida o usuário
+            </summary>
+            <param name="login">Objeto login que contém o e-mail e a senha do usuário</param>
+            <returns>Retorna um token com as informações do usuário</returns>
+            <response code="201">Se o objeto for criado corretamente</response>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
             <response code="400">Erro em alguma parte da requisição</response>
             <response code="401">Se o usuário não estiver logado</response>
             <response code="403">Se o usuário não tiver permissão para tal ação</response>
         </member>
+<<<<<<< HEAD
         <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.GetById(System.Int32)">
             <summary>
             Busca um estudio através do seu ID
@@ -23,20 +34,51 @@
             <param name="id">ID do estudio que será buscado</param>
             <returns>Retorna um estudio buscado ou NotFound caso nenhum seja encontrado</returns>
             <response code="200">Se a lista for acessada com sucesso</response>
+=======
+        <member name="P:Senai.InLock.WebApi.Controllers.TiposUsuarioController._tipoUsuarioRepository">
+            <summary>
+            Cria um objeto _tipoUsuarioRepository que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.TiposUsuarioController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.TiposUsuarioController.Get">
+            <summary>
+            Lista todos os tipos de usuário
+            </summary>
+            <returns>Retorna uma lista de tipos de usuário e um status code 200 - Ok</returns>
+            dominio/api/TiposUsuario
+            <response code="200">Se a lista for acessada com êxito</response>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
             <response code="400">Erro em alguma parte da requisição</response>
             <response code="401">Se o usuário não estiver logado</response>
             <response code="403">Se o usuário não tiver permissão para tal ação</response>
         </member>
+<<<<<<< HEAD
         <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Post(Senai.InLock.WebApi.Domains.EstudiosDomain)">
             <summary>
             Cadastra um novo estúdio
             </summary>
             <param name="novoEstudio">Objeto novoEstudio que será cadastrado</param>
             <response code="201">Se o Estudio for cadastrado co sucesso</response>
+=======
+        <member name="M:Senai.InLock.WebApi.Controllers.TiposUsuarioController.Post(Senai.InLock.WebApi.Domains.TiposUsuariosDomain)">
+            <summary>
+            Cadastra um novo tipo de usuário
+            </summary>
+            <param name="novoTipoUsuario">Objeto novoTipoUsuario que será cadastrado</param>
+            <returns>Retorna os dados que foram enviados para cadastro e um status code 201 - Created</returns>
+            dominio/api/TiposUsuario
+            <response code="201">Se o objeto for criado com êxito</response>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
             <response code="400">Erro em alguma parte da requisição</response>
             <response code="401">Se o usuário não estiver logado</response>
             <response code="403">Se o usuário não tiver permissão para tal ação</response>
         </member>
+<<<<<<< HEAD
         <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Put(System.Int32,Senai.InLock.WebApi.Domains.EstudiosDomain)">
             <summary>
             Atualiza um estúdio existente
@@ -44,16 +86,120 @@
             <param name="id">ID do estúdio que será alterado</param>
             <param name="EstudioAtualizado">Objeto EstudioAtualizado que será alterado</param>
             <response code="200">Se o Estudio for atualizado com sucesso</response>
+=======
+        <member name="M:Senai.InLock.WebApi.Controllers.TiposUsuarioController.GetById(System.Int32)">
+            <summary>
+            Busca um tipo de usuário através do seu ID
+            </summary>
+            <param name="id">ID do tipo de usuário que será buscado</param>
+            <returns>Retorna um tipo de usuário buscado ou NotFound caso nenhum seja encontrado</returns>
+            dominio/api/TiposUsuario/1
+            <response code="200">Se a lista for acessada</response>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
             <response code="400">Erro em alguma parte da requisição</response>
             <response code="401">Se o usuário não estiver logado</response>
             <response code="403">Se o usuário não tiver permissão para tal ação</response>
         </member>
+<<<<<<< HEAD
         <member name="M:Senai.InLock.WebApi.Controllers.EstudiosController.Delete(System.Int32)">
             <summary>
             Deleta um estúdio existente
             </summary>
             <param name="id">ID do estúdio que será deletado</param>
             <response code="200">Se o Estudio for atualizado com sucesso</response>
+=======
+        <member name="M:Senai.InLock.WebApi.Controllers.TiposUsuarioController.Put(System.Int32,Senai.InLock.WebApi.Domains.TiposUsuariosDomain)">
+            <summary>
+            Atualiza um tipo de usuário existente
+            </summary>
+            <param name="id">ID do tipo de usuário que será atualizado</param>
+            <param name="tipoUsuarioAtualizado">Objeto tipoUsuarioAtualizado que será atualizado</param>
+            <returns>Retorna um status code</returns>
+            dominio/api/TiposUsuario/1
+            <response code="204">Sem retorno ao ser atualizado com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+            <response code="401">Se o usuário não estiver logado</response>
+            <response code="403">Se o usuário não tiver permissão para tal ação</response>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.TiposUsuarioController.Delete(System.Int32)">
+            <summary>
+            Deleta um tipo de usuário
+            </summary>
+            <param name="id">ID do tipo de usuário que será deletado</param>
+            <returns>Retorna um status code com uma mensagem de sucesso ou erro</returns>
+            dominio/api/TiposUsuario/1
+            <response code="200">Se a requisição ocorrer corretamente</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+            <response code="401">Se o usuário não estiver logado</response>
+            <response code="403">Se o usuário não tiver permissão para tal ação</response>
+        </member>
+        <member name="P:Senai.InLock.WebApi.Controllers.UsuariosController._usuarioRepository">
+            <summary>
+            Cria um objeto _usuarioRepository que irá receber todos os métodos definidos na interface
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.UsuariosController.#ctor">
+            <summary>
+            Instancia este objeto para que haja a referência aos métodos no repositório
+            </summary>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.UsuariosController.Get">
+            <summary>
+            Lista todos os usuários
+            </summary>
+            <returns>Retorna uma lista de usuários e um status code 200 - Ok</returns>
+            dominio/api/Usuarios
+            <response code="200">Lista retornada com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+            <response code="401">Se o usuário não estiver logado</response>
+            <response code="403">Se o usuário não tiver permissão para tal ação</response>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.UsuariosController.Post(Senai.InLock.WebApi.Domains.UsuariosDomain)">
+            <summary>
+            Cadastra um novo usuário
+            </summary>
+            <param name="novoUsuario">Objeto novoUsuario que será cadastrado</param>
+            <returns>Retorna os dados que foram enviados para cadastro e um status code 201 - Created</returns>
+            dominio/api/Usuarios
+            <response code="201">Criado com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+            <response code="401">Se o usuário não estiver logado</response>
+            <response code="403">Se o usuário não tiver permissão para tal ação</response>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.UsuariosController.GetById(System.Int32)">
+            <summary>
+            Busca um usuário através do seu ID
+            </summary>
+            <param name="id">ID do usuário que será buscado</param>
+            <returns>Retorna um usuário buscado ou NotFound caso nenhum seja encontrado</returns>
+            dominio/api/Usuarios/1
+            <response code="200">Lista retornada com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+            <response code="401">Se o usuário não estiver logado</response>
+            <response code="403">Se o usuário não tiver permissão para tal ação</response>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.UsuariosController.Put(System.Int32,Senai.InLock.WebApi.Domains.UsuariosDomain)">
+            <summary>
+            Atualiza um usuário existente
+            </summary>
+            <param name="id">ID do usuário que será atualizado</param>
+            <param name="usuarioAtualizado">Objeto usuarioAtualizado que será atualizado</param>
+            <returns>Retorna um status code</returns>
+            dominio/api/Usuarios/1
+            <response code="204">Sem retorno ao ser atualizado com sucesso</response>
+            <response code="400">Erro em alguma parte da requisição</response>
+            <response code="401">Se o usuário não estiver logado</response>
+            <response code="403">Se o usuário não tiver permissão para tal ação</response>
+        </member>
+        <member name="M:Senai.InLock.WebApi.Controllers.UsuariosController.Delete(System.Int32)">
+            <summary>
+            Deleta um usuário
+            </summary>
+            <param name="id">ID do usuário que será deletado</param>
+            <returns>Retorna um status code com uma mensagem de sucesso ou erro</returns>
+            dominio/api/Usuarios/1
+            <response code="200">Deletado com sucesso</response>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
             <response code="400">Erro em alguma parte da requisição</response>
             <response code="401">Se o usuário não estiver logado</response>
             <response code="403">Se o usuário não tiver permissão para tal ação</response>
@@ -186,6 +332,17 @@
             </summary>
             <param name="id">ID do usuário que será deletado</param>
         </member>
+<<<<<<< HEAD
+=======
+        <member name="M:Senai.InLock.WebApi.Interfaces.IUsuariosRepository.BuscarPorEmailSenha(System.String,System.String)">
+            <summary>
+            Busca um usuário através do e-mail e da senha
+            </summary>
+            <param name="email">E-mail do usuário</param>
+            <param name="senha">Senha do usuário</param>
+            <returns>Retorna um usuário validado</returns>
+        </member>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
         <member name="F:Senai.InLock.WebApi.Repositories.TiposUsuariosRepository.stringConexao">
             <summary>
             String de conexão com o banco de dados que recebe os parâmetros

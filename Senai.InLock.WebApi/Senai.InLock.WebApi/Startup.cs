@@ -59,16 +59,16 @@ namespace Senai.InLock.WebApi
                         ValidateLifetime = true,
 
                         // Forma de criptografia
-                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("peoples-chave-autenticacao")),
+                        IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("InLock-chave-autenticacao")),
 
                         // Tempo de expiração do token
                         ClockSkew = TimeSpan.FromMinutes(30),
 
                         // Nome da issuer, de onde está vindo
-                        ValidIssuer = "Peoples.WebApi",
+                        ValidIssuer = "InLock.WebApi",
 
                         // Nome da audience, de onde está vindo
-                        ValidAudience = "Peoples.WebApi"
+                        ValidAudience = "InLock.WebApi"
                     };
                 });
         }

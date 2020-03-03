@@ -9,5 +9,12 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+<<<<<<< HEAD
+=======
+    <ActiveDebugProfile>Senai.InLock.WebApi</ActiveDebugProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>
+>>>>>>> 174f2bbed538009e254677cb9ab3e24e500387fb
   </PropertyGroup>
 </Project>

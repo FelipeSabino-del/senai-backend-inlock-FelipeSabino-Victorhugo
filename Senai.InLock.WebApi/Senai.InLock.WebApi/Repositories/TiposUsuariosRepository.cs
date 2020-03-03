@@ -26,7 +26,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada
-                string queryUpdate = "UPDATE TiposUsuario SET Titulo = @Titulo WHERE IdTipoUsuario = @ID";
+                string queryUpdate = "UPDATE TiposUsuarios SET Titulo = @Titulo WHERE IdTipoUsuario = @ID";
 
                 // Declara o SqlCommand passando o comando a ser executado e a conexão
                 using (SqlCommand cmd = new SqlCommand(queryUpdate, con))
@@ -55,7 +55,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada
-                string querySelectById = "SELECT IdTipoUsuario, Titulo FROM TiposUsuario WHERE IdTipoUsuario = @ID";
+                string querySelectById = "SELECT IdTipoUsuario, Titulo FROM TiposUsuarios WHERE IdTipoUsuario = @ID";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
@@ -103,7 +103,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada
-                string queryInsert = "INSERT INTO TiposUsuario(Titulo) VALUES (@Titulo)";
+                string queryInsert = "INSERT INTO TiposUsuarios(Titulo) VALUES (@Titulo)";
 
                 // Declara o comando passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
@@ -130,7 +130,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada passando o valor como parâmetro
-                string queryDelete = "DELETE FROM TiposUsuario WHERE IdTipoUsuario = @ID";
+                string queryDelete = "DELETE FROM TiposUsuarios WHERE IdTipoUsuario = @ID";
 
                 // Declara o comando passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(queryDelete, con))
@@ -160,7 +160,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string querySelectAll = "SELECT IdTipoUsuario, Titulo FROM TiposUsuario";
+                string querySelectAll = "SELECT IdTipoUsuario, Titulo FROM TiposUsuarios";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
