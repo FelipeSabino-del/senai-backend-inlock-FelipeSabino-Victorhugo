@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.InLock.WebApi.Domains;
@@ -35,7 +36,7 @@ namespace Senai.InLock.WebApi.Controllers
         /// <response code="401">Se o usuário não estiver logado</response>
         /// <response code="403">Se o usuário não tiver permissão para tal ação</response>
         [HttpGet]
-
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -56,6 +57,7 @@ namespace Senai.InLock.WebApi.Controllers
         /// <response code="401">Se o usuário não estiver logado</response>
         /// <response code="403">Se o usuário não tiver permissão para tal ação</response>
         [HttpGet("{id}")]
+        [Authorize]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -80,6 +82,7 @@ namespace Senai.InLock.WebApi.Controllers
         /// <response code="401">Se o usuário não estiver logado</response>
         /// <response code="403">Se o usuário não tiver permissão para tal ação</response>
         [HttpPost]
+        [Authorize(Roles = "1")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -105,7 +108,7 @@ namespace Senai.InLock.WebApi.Controllers
         /// <response code="401">Se o usuário não estiver logado</response>
         /// <response code="403">Se o usuário não tiver permissão para tal ação</response>
         [HttpPut("{id}")]
-
+        [Authorize(Roles = "1")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]
@@ -143,7 +146,7 @@ namespace Senai.InLock.WebApi.Controllers
         /// <response code="401">Se o usuário não estiver logado</response>
         /// <response code="403">Se o usuário não tiver permissão para tal ação</response>
         [HttpDelete("{id}")]
-
+        [Authorize(Roles = "1")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status401Unauthorized)]

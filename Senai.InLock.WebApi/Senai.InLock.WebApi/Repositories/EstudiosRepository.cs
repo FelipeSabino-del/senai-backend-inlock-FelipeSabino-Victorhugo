@@ -42,7 +42,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string querySelectAll = "SELECT NomeEstudio FROM Estudios WHERE IdEstudio = @ID";
+                string querySelectAll = "SELECT IdEstudio, NomeEstudio FROM Estudios WHERE IdEstudio = @ID";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
@@ -54,9 +54,9 @@ namespace Senai.InLock.WebApi.Repositories
                 using (SqlCommand cmd = new SqlCommand(querySelectAll, con))
                 {
                     // Executa a query e armazena os dados no rdr
-                    rdr = cmd.ExecuteReader();
-
                     cmd.Parameters.AddWithValue("@ID", id);
+
+                    rdr = cmd.ExecuteReader();
 
                     // Enquanto houver registros para serem lidos no rdr, o laço se repete
                     if (rdr.Read())
@@ -64,7 +64,6 @@ namespace Senai.InLock.WebApi.Repositories
                         // Instancia um objeto 
                         EstudiosDomain estudio = new EstudiosDomain
                         {
-                            // Atribui às propriedades os valores das colunas da tabela do banco
                             IdEstudio = Convert.ToInt32(rdr["IdEstudio"]),
                             NomeEstudio = rdr["NomeEstudio"].ToString()
                         };
@@ -129,7 +128,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string querySelectAll = "SELECT Estudios.NomeEstudio, NomeJogo FROM Jogos RIGHT JOIN Estudios ON Estudios.IdEstudio = Jogos.IdEstudio";
+                string querySelectAll = "SELECT Estudios.IdEstudio, Estudios.NomeEstudio, NomeJogo FROM Jogos RIGHT JOIN Estudios ON Estudios.IdEstudio = Jogos.IdEstudio";
 
                 // Abre a conexão com o banco de dados
                 con.Open();

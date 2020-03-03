@@ -23,3 +23,5 @@ SELECT IdJogo,NomeJogo,Descricao,DataLancamento,Valor,IdEstudio	FROM Jogos WHERE
 
 --Buscar um estúdio por IdEstudio; 
 SELECT IdEstudio,NomeEstudio FROM Estudios WHERE IdEstudio = 2;
+
+SELECT IdJogo, NomeJogo, Descricao, DataLancamento, Valor,Estudios.NomeEstudio FROM Jogos INNER JOIN Estudios ON Estudios.IdEstudio = Jogos.IdEstudio;
