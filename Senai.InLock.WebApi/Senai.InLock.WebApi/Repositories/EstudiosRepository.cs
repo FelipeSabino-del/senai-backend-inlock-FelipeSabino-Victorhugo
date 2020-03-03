@@ -129,7 +129,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string querySelectAll = "SELECT NomeEstudio FROM Estudios";
+                string querySelectAll = "SELECT Estudios.NomeEstudio, NomeJogo FROM Jogos RIGHT JOIN Estudios ON Estudios.IdEstudio = Jogos.IdEstudio";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
