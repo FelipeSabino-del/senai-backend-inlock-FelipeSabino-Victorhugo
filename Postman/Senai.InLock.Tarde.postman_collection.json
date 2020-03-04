@@ -16,7 +16,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMjY5MDQyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.6lnKhwZC4968h40rZ_XLdUls0H7T_8P61kreImPHjDw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMzQ0MTUwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.6r2PP3ol-jekjDMw0ArfygQkiLXKK_nkK00Htt2HJ8w",
 									"type": "string"
 								}
 							]
@@ -92,7 +92,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMjY5MDQyLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.6lnKhwZC4968h40rZ_XLdUls0H7T_8P61kreImPHjDw",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMzQ0MTUwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.6r2PP3ol-jekjDMw0ArfygQkiLXKK_nkK00Htt2HJ8w",
 									"type": "string"
 								}
 							]
@@ -108,7 +108,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"NomeEstudio\":\"Rockstar North\"\n}",
+							"raw": "{\n\t\"nomeEstudio\":\"Rockstar Studio\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -185,19 +185,26 @@
 				},
 				{
 					"name": "Listar jogos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMjY5OTE4LCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.ar-B28TKiRFGt9cCcfdyefTXg7dirVh2JabwlOFlW8M",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMzQ0MTUwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.6r2PP3ol-jekjDMw0ArfygQkiLXKK_nkK00Htt2HJ8w",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "http://localhost:5000/api/Jogos",
 							"protocol": "http",
@@ -216,6 +223,16 @@
 				{
 					"name": "Atualizar Jogo",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMzQzMTgzLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.btLOlKG8fB9zWUpePlw3TAa_ULhJ5oQ_vFHoQEcd3Zo",
+									"type": "string"
+								}
+							]
+						},
 						"method": "PUT",
 						"header": [
 							{
@@ -227,7 +244,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\n\t\"NomeJogo\":\"GTA IV\",\n\t\"Descricao\":\"Jogo legal de roubo\",\n\t\"DataLancamento\":\"2012-06-07\",\n\t\"Valor\":\"150.00\",\n\t\"IdEstudio\":\"2\"\n}",
+							"raw": "{\n\n\t\"NomeJogo\":\"Diablo 2\",\n\t\"Descricao\":\"Jogo legal\",\n\t\"DataLancamento\":\"2012-06-07\",\n\t\"Valor\":\"150.00\",\n\t\"IdEstudio\":\"1\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -235,7 +252,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5000/api/Jogos/3",
+							"raw": "http://localhost:5000/api/Jogos/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -244,7 +261,38 @@
 							"path": [
 								"api",
 								"Jogos",
-								"3"
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar jogo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFkbWluQGFkbWluLmNvbSIsImp0aSI6IjIiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiIxIiwiZXhwIjoxNTgzMzQ0MTUwLCJpc3MiOiJJbkxvY2suV2ViQXBpIiwiYXVkIjoiSW5Mb2NrLldlYkFwaSJ9.6r2PP3ol-jekjDMw0ArfygQkiLXKK_nkK00Htt2HJ8w",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/Jogos/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"Jogos",
+								"2"
 							]
 						}
 					},

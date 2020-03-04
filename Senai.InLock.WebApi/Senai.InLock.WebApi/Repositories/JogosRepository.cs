@@ -18,17 +18,18 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a query que será executada
-                string queryInsert = "UPDATE Jogos SET NomeJogo = @Nome, Descricao = @Descricao, DataLancamento = @Data, Valor = @$ WHERE IdEstudio = @ID";
+                string queryInsert = "UPDATE Jogos SET NomeJogo = @Nome, Descricao = @Descricao, DataLancamento = @Data, Valor = @$, IdEstudio = @IdEstudio WHERE IdJogo = @ID";
 
                 // Declara o comando passando a query e a conexão
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
                     // Passa o valor do parâmetro
+                    cmd.Parameters.AddWithValue("@ID", JogoAtualizado.IdEstudio);
                     cmd.Parameters.AddWithValue("@Nome", JogoAtualizado.NomeJogo);
                     cmd.Parameters.AddWithValue("@Descricao", JogoAtualizado.Descricao);
                     cmd.Parameters.AddWithValue("@Data", JogoAtualizado.DataLancamento);
                     cmd.Parameters.AddWithValue("@$", JogoAtualizado.Valor);
-                    cmd.Parameters.AddWithValue("@ID", JogoAtualizado.IdEstudio);
+                    cmd.Parameters.AddWithValue("@IdEstudio", JogoAtualizado.IdEstudio);
 
                     // Abre a conexão com o banco de dados
                     con.Open();
@@ -45,7 +46,7 @@ namespace Senai.InLock.WebApi.Repositories
             using (SqlConnection con = new SqlConnection(stringConexao))
             {
                 // Declara a instrução a ser executada
-                string querySelectAll = "SELECT IdJogo, NomeJogo, Descricao, DataLancamento, Valor, Estudios.NomeEstudio INNER JOIN Estudios ON Estudios.IdEstudio = Jogo.IdEstudio FROM Jogos WHERE Idjogo = @ID";
+                string querySelectAll = "SELECT IdJogo, NomeJogo, Descricao, DataLancamento, Valor, Estudios.NomeEstudio FROM Jogos INNER JOIN Estudios ON Estudios.IdEstudio = Jogos.IdEstudio WHERE Idjogo = @ID";
 
                 // Abre a conexão com o banco de dados
                 con.Open();
@@ -56,23 +57,29 @@ namespace Senai.InLock.WebApi.Repositories
                 // Declara o SqlCommand passando o comando a ser executado e a conexão
                 using (SqlCommand cmd = new SqlCommand(querySelectAll, con))
                 {
+                    cmd.Parameters.AddWithValue("@ID", id);
+
                     // Executa a query e armazena os dados no rdr
                     rdr = cmd.ExecuteReader();
-
-                    cmd.Parameters.AddWithValue("@ID", id);
 
                     // Enquanto houver registros para serem lidos no rdr, o laço se repete
                     if (rdr.Read())
                     {
                         // Instancia um objeto 
-                        JogosDomain jogo = new JogosDomain();
-                        // Atribui às propriedades os valores das colunas da tabela do banco
-                        jogo.IdJogo = Convert.ToInt32(rdr["IdJogo"]);
-                        jogo.NomeJogo = rdr["NomeJogo"].ToString();
-                        jogo.Descricao = rdr["Descricao"].ToString();
-                        jogo.DataLancamento = DateTime.Parse(rdr["DataLancamento"].ToString());
-                        jogo.Valor = Convert.ToSingle(rdr["Valor"]);
-                        jogo.Estudio.NomeEstudio = rdr["Estudios.NomeEstudio"].ToString();
+                        JogosDomain jogo = new JogosDomain()
+                        {
+                            // Atribui às propriedades os valores das colunas da tabela do banco
+                            IdJogo = Convert.ToInt32(rdr["IdJogo"]),
+                            NomeJogo = rdr["NomeJogo"].ToString(),
+                            Descricao = rdr["Descricao"].ToString(),
+                            DataLancamento = DateTime.Parse(rdr["DataLancamento"].ToString()),
+                            Valor = Convert.ToSingle(rdr["Valor"]),
+
+                            Estudio = new EstudiosDomain()
+                            {
+                                NomeEstudio = rdr["NomeEstudio"].ToString()
+                            }
+                        };
                         return jogo;
                     }
                     return null;

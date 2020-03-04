@@ -24,8 +24,8 @@ namespace Senai.InLock.WebApi.Repositories
                 using (SqlCommand cmd = new SqlCommand(queryInsert, con))
                 {
                     // Passa o valor do parâmetro
+                    cmd.Parameters.AddWithValue("@ID", id);
                     cmd.Parameters.AddWithValue("@Nome", EstudioAtualizado.NomeEstudio);
-                    cmd.Parameters.AddWithValue("@ID", EstudioAtualizado.IdEstudio);
 
                     // Abre a conexão com o banco de dados
                     con.Open();
